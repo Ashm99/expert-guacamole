@@ -1,2 +1,2 @@
-# expert-guacamole
-A spring boot product catalog backend application
+# What this repo has
+A spring boot product catalog backend application configured with MySQL db
