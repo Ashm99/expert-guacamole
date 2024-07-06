@@ -5,7 +5,6 @@ import com.productcatalogsystem.productcatalogsystem.repo.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,9 +13,7 @@ public class ProductService {
     ProductRepository productRepository;
 
     public List<Product> getAllProducts(){
-        List<Product> productList = new ArrayList<>();
-        productRepository.findAll().forEach(product -> productList.add(product));
-        return productList;
+        return (List<Product>) productRepository.findAll();
     }
 
     public Product addProduct(Product product) {
