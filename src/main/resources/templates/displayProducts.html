@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show all products</title>
+    <style>
+        section table,
+        th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3>Available products:</h3>
+    </header>
+    <section>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Catogory</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="product, iterStat :${products}">
+                    <td th:text="${iterStat.count}"></td>
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.price}"></td>
+                    <td th:text="${product.category}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <footer>
+        <br>
+        <a href="/home">Back to Home</a>
+    </footer>
+</body>
+</html>

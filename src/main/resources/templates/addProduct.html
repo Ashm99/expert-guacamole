@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+</head>
+<body>
+    <header>
+        <h3>Fill and click "Add product" to add a new product:</h3>
+    </header>
+    <section>
+        <div class="product-form">
+            <form action="/addProduct" method="post">
+                <label for="product-name">Product name:</label>
+                <!-- The for attribute should match with the id attribute of its input element for accessibility-->
+                <input type="text" name="name" id="product-name" required> <br><br>
+                <!-- The name attribute here should match with the @RequestParam's parameter value in the method which this form calls upon submission -->
+
+                <label for="product-price">Product price:</label>
+                <input type="number" name="price" id="product-price" required> <br><br>
+
+                <label for="product-category">Product category:</label>
+                <input type="text" name="category" id="product-category" required> <br><br>
+                
+                <input type="submit" name="submit" value="Add product">
+            </form>
+        </div>
+        <br>
+        <a href="/home">Back to Home</a>
+    </section>
+</body>
+</html>

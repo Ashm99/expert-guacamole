@@ -1,5 +1,6 @@
 package com.productcatalogsystem.productcatalogsystem.controller;
 
+import com.productcatalogsystem.productcatalogsystem.dto.ProductDTO;
 import com.productcatalogsystem.productcatalogsystem.entity.Product;
 import com.productcatalogsystem.productcatalogsystem.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-//@RequestMapping(value = "/products")
 public class ProductController {
     @Autowired
     ProductService productService;
@@ -20,7 +20,7 @@ public class ProductController {
         return productService.getAllProducts();
     }
     @PostMapping(value = "/add")
-    public Product addProduct(@RequestBody Product product){
-        return productService.addProduct(product);
+    public Product addProduct(@RequestBody ProductDTO productDTO){
+        return productService.addProduct(productDTO);
     }
 }
